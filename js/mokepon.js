@@ -150,20 +150,20 @@ function logUpdate() {
     <p><span id="result">${result}</span></p>
     <hr>`
     combatLog.append(logElement)
-    setTimeout(hpStatus, 1000)
-    if(playerHp == -1) {
-        playerHp++
-        hpStatus()
-    }else if(enemyHp == -2){
-        enemyHp++
-        hpStatus()
-    }
+    setTimeout(hpStatus, 3000)
+    
 }
     
     
     
 let matchResult
 function hpStatus(){
+    if(playerHp == 0 || enemyHp == 0){
+        btnEarth.disabled = true
+        btnFire.disabled = true
+        btnWater.disabled = true
+    }
+
     if(playerHp == 0) {
         matchResult = 'PERDISTE'
         endMatch(matchResult)
@@ -192,16 +192,6 @@ function endMatch(matchResult){
 
 // RESET GAME 
 function resetGame(){
-    combatLog.innerHTML = ''
-    playerHp = 4
-    enemyHp = 4
-    spanPlayerHp.innerText = playerHp
-    spanEnemyHp.innerText = enemyHp
-    hpCounters.classList.add('display-none')
-    atkSelectionScreen.classList.add('display-none')
-    petSelectionScreen.classList.remove('display-none')
-    combatLog.classList.remove('display-none')
-    endScreen.classList.add('display-none')
-    btnReset.classList.add('display-none')
+    location.reload()
 } 
 btnReset.addEventListener('click', resetGame)  
