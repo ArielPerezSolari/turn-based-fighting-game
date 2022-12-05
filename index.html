@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Mokepon!</title>
+    
+</head>
+<body>
+    <h1>Mokepon ! 🔥💧🌱</h1>
+
+    <section id="pet-selection">
+        <h2>Elige tu mascota:</h2>
+
+        <label for="hipodoge">Hipodoge</label>
+        <input type="radio" id="hipodoge" name="pet" />
+        <label for="capipepo">Capipepo</label>
+        <input type="radio" id="capipepo" name="pet" />
+        <label for="ratigueya">Ratigueya</label>
+        <input type="radio" id="ratigueya" name="pet" />
+
+
+        <button id="btn-select">Seleccionar</button>
+    </section>
+
+    <section id="atk-selection">
+        <h2>Elige tu ataque:</h2>
+        <div id="hp-log" class="display-none">
+            <p>Tu mascota <span id="player-pet"></span> tiene <span id="player-hp">4</span> vidas</p>
+            <p>La mascota <span id="enemy-pet"></span> del enemigo tiene <span id="enemy-hp">4</span> vidas</p>
+        </div>
+            <button id="btn-fire">Fuego 🔥</button>
+            <button id="btn-water">Agua 💧</button>
+            <button id="btn-earth">Tierra 🌱</button>
+    </section>
+
+    <section id="combat-log">
+        
+    </section>
+    <section id="end-screen" class="display-none">
+        <h3 id="match-result">caca</h3>
+    </section>
+    <section id="reset">
+        <button id="btn-reset">Reiniciar</button>
+    </section>
+
+    <script src="./js/mokepon.js"></script>
+</body>
+</html>
