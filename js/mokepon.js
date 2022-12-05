@@ -1,3 +1,6 @@
+let atkSelectionScreen = document.getElementById('atk-selection')
+let petSelectionScreen = document.getElementById('pet-selection')
+let endScreen = document.getElementById('end-screen')
 let btnPet = document.getElementById('btn-select')
 let btnFire = document.getElementById('btn-fire')
 let btnWater = document.getElementById('btn-water')
@@ -34,7 +37,9 @@ const selectPet = ()=> {
     } else{
         alert('No seleccionaste ningun Mokepon')
     }
-    
+    atkSelectionScreen.classList.remove('display-none')
+    btnReset.classList.remove('display-none')
+    petSelectionScreen.classList.add('display-none')
 }
 // RANDOM NUMBER FUNCTION
 function selectRandom(min, max) {
@@ -142,7 +147,8 @@ function logUpdate() {
     let logElement = document.createElement('div')
     logElement.innerHTML = `<p>Tu mascota  ataco con : <span id="player-attack">${playerAttack}</span></p>
     <p>La mascota  del enemigo ataco con : <span id="enemy-attack">${randomEnemyAttack}</span></p>
-    <p><span id="result">${result}</span></p>`
+    <p><span id="result">${result}</span></p>
+    <hr>`
     combatLog.append(logElement)
     setTimeout(hpStatus, 1000)
     if(playerHp == -1) {
@@ -170,9 +176,7 @@ function hpStatus(){
     }
 }
 
-let atkSelectionScreen = document.getElementById('atk-selection')
-let petSelectionScreen = document.getElementById('pet-selection')
-let endScreen = document.getElementById('end-screen')
+
 function endMatch(matchResult){
     atkSelectionScreen.classList.add('display-none')
     petSelectionScreen.classList.add('display-none')
@@ -194,9 +198,10 @@ function resetGame(){
     spanPlayerHp.innerText = playerHp
     spanEnemyHp.innerText = enemyHp
     hpCounters.classList.add('display-none')
-    atkSelectionScreen.classList.remove('display-none')
+    atkSelectionScreen.classList.add('display-none')
     petSelectionScreen.classList.remove('display-none')
     combatLog.classList.remove('display-none')
     endScreen.classList.add('display-none')
+    btnReset.classList.add('display-none')
 } 
 btnReset.addEventListener('click', resetGame)  
