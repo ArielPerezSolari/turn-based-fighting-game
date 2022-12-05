@@ -4,40 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Nerko+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Mokepon!</title>
     
 </head>
 <body>
-    <h1>Mokepon ! 🔥💧🌱</h1>
+    <main class="viewport">
+    <h1>Dungeon fight</h1>
 
     <section id="pet-selection">
         <h2>Elige tu mascota:</h2>
-
-        <label for="hipodoge">Hipodoge</label>
-        <input type="radio" id="hipodoge" name="pet" />
-        <label for="capipepo">Capipepo</label>
-        <input type="radio" id="capipepo" name="pet" />
-        <label for="ratigueya">Ratigueya</label>
-        <input type="radio" id="ratigueya" name="pet" />
-
+        <div class="pets-container card-container">
+            <div class="card">
+                <label for="hipodoge">
+                <p>Hipodoge</p>
+                <img class="img-selection" src="./assets/capuchon.jpg" alt="">
+                </label>
+                <input type="radio" id="hipodoge" name="pet" class="display-none"/>
+            </div>
+            <div class="card">
+                <label for="capipepo">
+                <p>capipepo</p>
+                <img class="img-selection" src="./assets/floripo.jpg" alt="">
+                </label>
+                <input type="radio" id="capipepo" name="pet" class="display-none"/>
+            </div>
+            <div class="card">
+                <label for="ratigueya">
+                <p>Ratigueya</p>
+                <img class="img-selection" src="./assets/cerobro.jpg" alt="">
+                </label>
+                <input type="radio" id="ratigueya" name="pet" class="display-none"/>
+            </div>
+        </div>
 
         <button id="btn-select">Seleccionar</button>
     </section>
 
     <section id="atk-selection" class="display-none">
         <h2>Elige tu ataque:</h2>
-        <div id="hp-log" class="display-none">
-            <p>Tu mascota <span id="player-pet"></span> tiene <span id="player-hp">4</span> vidas</p>
-            <p>La mascota <span id="enemy-pet"></span> del enemigo tiene <span id="enemy-hp">4</span> vidas</p>
-        </div>
             <button id="btn-fire">Fuego 🔥</button>
             <button id="btn-water">Agua 💧</button>
             <button id="btn-earth">Tierra 🌱</button>
+            <p>Tu mascota <span id="player-pet"></span> tiene <span id="player-hp">4</span> vidas</p>
+            <p>La mascota <span id="enemy-pet"></span> del enemigo tiene <span id="enemy-hp">4</span> vidas</p>
+            <hr>
     </section>
 
     <section id="combat-log">
-        
+
     </section>
     <section id="end-screen" class="display-none">
         <h3 id="match-result">caca</h3>
@@ -45,6 +61,7 @@
     <section id="reset">
         <button id="btn-reset" class="display-none">Reiniciar</button>
     </section>
+</main>
 
     <script src="./js/mokepon.js"></script>
 </body>

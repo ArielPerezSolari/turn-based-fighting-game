@@ -6,7 +6,6 @@ let btnFire = document.getElementById('btn-fire')
 let btnWater = document.getElementById('btn-water')
 let btnEarth = document.getElementById('btn-earth')
 let btnReset = document.getElementById('btn-reset')
-let hpCounters = document.getElementById('hp-log')
 let playerHp = 4
 let enemyHp = 4
 
@@ -59,7 +58,6 @@ function selectEnemyPet(){
         enemyPet.innerText = 'Ratigueya'
 } 
 
-hpCounters.classList.remove('display-none')
 
 }
 btnPet.addEventListener('click', selectPet) 
@@ -151,6 +149,11 @@ function logUpdate() {
     <hr>`
     combatLog.append(logElement)
     setTimeout(hpStatus, 3000)
+    if(playerHp == 0 || enemyHp == 0){
+        btnEarth.disabled = true
+        btnFire.disabled = true
+        btnWater.disabled = true
+        }   
     
 }
     
@@ -158,22 +161,17 @@ function logUpdate() {
     
 let matchResult
 function hpStatus(){
-    if(playerHp == 0 || enemyHp == 0){
-        btnEarth.disabled = true
-        btnFire.disabled = true
-        btnWater.disabled = true
-    }
-
-    if(playerHp == 0) {
-        matchResult = 'PERDISTE'
-        endMatch(matchResult)
-    }else if(playerHp == 0 && enemyHp == 0) {
+    if(playerHp == 0 && enemyHp == 0) {
         matchResult = 'EMPATE'
+        endMatch(matchResult)
+    }else if(playerHp == 0) {
+        matchResult = 'PERDISTE'
         endMatch(matchResult)
     }else if(enemyHp == 0 ){
         matchResult = 'GANASTE'
         endMatch(matchResult)
     }
+    
 }
 
 
