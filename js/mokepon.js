@@ -9,9 +9,12 @@ let btnReset = document.getElementById('btn-reset')
 let playerHp = 4
 let enemyHp = 4
 
+let optionOne = document.getElementById('pet-1')
+let optionTwo = document.getElementById('pet-2')
+let optionThree = document.getElementById('pet-3')
 
 
- 
+
 
 // PLAYER PET SELECTION SYSTEM 
 const selectPet = ()=> {
@@ -24,14 +27,17 @@ const selectPet = ()=> {
     if(hipodoge.checked){
         alert('Seleccionaste a Hipodoge')
         playerPet.innerText = ' Hipodoge'
+        optionOne.classList.add('active')
         selectEnemyPet()
     }else if(capipepo.checked){
         alert('Seleccionaste a Capipepo')
         playerPet.innerText = ' Capipepo'
+        optionTwo.classList.add('active')
         selectEnemyPet()
     }else if(ratigueya.checked){
         alert('Seleccionaste a Ratigueya')
         playerPet.innerText = ' Ratigueya'
+        optionThree.classList.add('active')
         selectEnemyPet()
     } else{
         alert('No seleccionaste ningun Mokepon')

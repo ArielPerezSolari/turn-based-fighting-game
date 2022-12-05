@@ -37,13 +37,23 @@ h1{
 .card-container{
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 20px;
 }
 .display-none{
     display: none !important; 
 }
+.card{
+    margin: 20px;
+}
 .img-selection{
+    box-sizing: border-box;
     border-radius: 50%;
     height:200px;
     width: 200px;
+}
+.img-selection:hover{
+    border: 1px solid red;
+}
+.active{
+    border: 1px solid red;
 }
