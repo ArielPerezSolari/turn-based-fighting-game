@@ -91,18 +91,18 @@ let playerAttack = ''
 function combat() {
 
         if (playerAttack === randomEnemyAttack) {
-            result= "EMPATE"
+            result= "Ambas mascotas recibieron 1 punto de daño"
             playerHp--
             enemyHp--
             spanPlayerHp.innerText = playerHp
             spanEnemyHp.innerText = enemyHp
         } else if (playerAttack === "Fuego" && randomEnemyAttack === "Tierra" ||    playerAttack === "Agua" && randomEnemyAttack === "Fuego" || playerAttack === "Tierra" && randomEnemyAttack === "Agua") {
-                result = "GANASTE"
+                result = "La mascota enemiga recibio 1 punto de daño"
                 enemyHp--
                 spanEnemyHp.innerText = enemyHp 
         } else {
             playerHp--
-            result = "PERDISTE" 
+            result = "Tu mascota recibio 1 punto de daño" 
             spanPlayerHp.innerText = playerHp
         }
         return result
@@ -144,7 +144,7 @@ function logUpdate() {
     <p>La mascota  del enemigo ataco con : <span id="enemy-attack">${randomEnemyAttack}</span></p>
     <p><span id="result">${result}</span></p>`
     combatLog.append(logElement)
-    hpStatus()
+    setTimeout(hpStatus, 1000)
 }
     
     
