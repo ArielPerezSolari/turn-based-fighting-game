@@ -145,6 +145,13 @@ function logUpdate() {
     <p><span id="result">${result}</span></p>`
     combatLog.append(logElement)
     setTimeout(hpStatus, 1000)
+    if(playerHp == -1) {
+        playerHp++
+        hpStatus()
+    }else if(enemyHp == -2){
+        enemyHp++
+        hpStatus()
+    }
 }
     
     
